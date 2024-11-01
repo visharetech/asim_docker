@@ -4,6 +4,9 @@
 ```console
 # Download the Dockerfile and place into new directory
 # Build the docker image
+# In Linux environment,
+#   option 1. you have to build the docker image with sudo
+#   option 2. create a Unix group called docker and add $USER to it (https://docs.docker.com/engine/install/linux-postinstall/)
 cd docker
 docker build -t vishare .
 
@@ -18,7 +21,7 @@ mkdir workspace
 #docker run -it vishare
 
 # The -v option in Docker is used to create a volume mount, which allows you to share files between your host machine and a Docker container.
-# Below example demonstrates how to mount the current example directory in Windows host to the /mnt/example
+# Below example demonstrates how to mount the current workspace directory in Windows host to the /mnt/workspace
 # For example, in windows, mount .\workspace to /mnt/workspace:
 docker run -v .\workspace:/mnt/workspace -it vishare
 ```
